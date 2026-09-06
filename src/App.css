@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #f8fafc;
+  background-color: #02040a;
+  background-image:
+    radial-gradient(circle at 15% 20%, #ffffff 1px, transparent 1px),
+    radial-gradient(circle at 70% 15%, #ffffff 1px, transparent 1px),
+    radial-gradient(circle at 85% 65%, #60a5fa 1px, transparent 1px),
+    radial-gradient(circle at 30% 75%, #ffffff 1px, transparent 1px),
+    radial-gradient(circle at 55% 45%, #ffffff 1px, transparent 1px);
+  background-size:
+    170px 170px,
+    230px 230px,
+    290px 290px,
+    310px 310px,
+    370px 370px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  border: 0;
+  text-align: left;
+}
+
+.app {
+  width: min(100% - 32px, 720px);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.app header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.app h1 {
+  margin: 0 0 12px;
+  color: #ffe81f;
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(255, 232, 31, 0.7),
+    0 0 25px rgba(255, 232, 31, 0.25);
+}
+
+.app header p {
+  margin: 0;
+  color: #93c5fd;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.app form {
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(2, 6, 23, 0.96)
+    );
+  box-shadow:
+    0 0 0 1px rgba(96, 165, 250, 0.1),
+    0 0 28px rgba(37, 99, 235, 0.25);
+}
+
+.app form::before {
+  content: "REGISTRO DE CRÉDITOS GALÁCTICOS";
+  margin-bottom: 8px;
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.app label {
+  margin-top: 8px;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.app input,
+.app select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  color: #f8fafc;
+  background: #080d18;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.app input:focus,
+.app select:focus {
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 3px rgba(96, 165, 250, 0.15),
+    0 0 14px rgba(96, 165, 250, 0.35);
+}
+
+.app button {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid #ffe81f;
+  border-radius: 4px;
+  color: #02040a;
+  background: #ffe81f;
+  font: inherit;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 232, 31, 0.25);
+  transition:
+    color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.app button:hover {
+  color: #ffe81f;
+  background: transparent;
+  box-shadow: 0 0 24px rgba(255, 232, 31, 0.5);
+  transform: translateY(-2px);
+}
+
+.app button:focus-visible {
+  outline: 3px solid rgba(255, 232, 31, 0.4);
+  outline-offset: 3px;
+}
+
+.app > p {
+  margin-top: 22px;
+  color: #93c5fd;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 520px) {
+  .app {
+    width: min(100% - 24px, 720px);
+    padding: 36px 0;
+  }
+
+  .app h1 {
+    letter-spacing: 1px;
+  }
+
+  .app form {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app button,
+  .app input,
+  .app select {
+    transition: none;
+  }
+}
+.expense-list {
+  margin-top: 32px;
+  padding: 26px;
+  border: 1px solid rgba(255, 232, 31, 0.45);
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(2, 6, 23, 0.96)
+    );
+  box-shadow:
+    0 0 0 1px rgba(255, 232, 31, 0.08),
+    0 0 28px rgba(255, 232, 31, 0.12);
+}
+
+.expense-list h2 {
+  margin: 0 0 20px;
+  color: #ffe81f;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.expense-list ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expense-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-left: 4px solid #60a5fa;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.8);
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.expense-list li:hover {
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.2);
+}
+
+.expense-list li strong {
+  overflow: hidden;
+  color: #f8fafc;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expense-list li span:first-of-type {
+  color: #67e8f9;
+  font-weight: 700;
+}
+
+.expense-list li span:last-of-type {
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 232, 31, 0.4);
+  border-radius: 999px;
+  color: #ffe81f;
+  background: rgba(255, 232, 31, 0.08);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .expense-list {
+    padding: 18px;
+  }
+
+  .expense-list li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .expense-list li strong {
+    white-space: normal;
+  }
+
+  .expense-list li span:last-of-type {
+    width: fit-content;
+  }
+}
