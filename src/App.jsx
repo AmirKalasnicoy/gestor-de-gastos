@@ -12,9 +12,12 @@ function App() {
       ...expense,
       id: crypto.randomUUID(),
     };
-
     setExpenses((currentExpenses) => [...currentExpenses, newExpense]);
   }
+  const totalExpenses= expenses.reduce(
+    (total, expense) => total + expense.amount,
+    0
+    )
   return (
     <main className="app">
       <header>
@@ -23,6 +26,7 @@ function App() {
       </header>
       <ExpenseForm onAddExpense={handleAddExpense} />
       <p>Gastos registrados: {expenses.length}</p>
+      <p>Total gastado: ${totalExpenses}</p>
       <ExpenseList expenses={expenses} />
     </main>
   );
