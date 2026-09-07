@@ -14,10 +14,20 @@ function App() {
     };
     setExpenses((currentExpenses) => [...currentExpenses, newExpense]);
   }
-  const totalExpenses= expenses.reduce(
+  const totalExpenses = expenses.reduce(
     (total, expense) => total + expense.amount,
     0
-    )
+  );
+
+  function handleDeleteExpense(expenseId) {
+    setExpenses((currentExpenses) =>
+      currentExpenses.filter((expense) => expense.id !== expenseId)
+    );
+  }
+  function handleDeleteAllExpenses() {
+    setExpenses([]);
+  }
+
   return (
     <main className="app">
       <header>
@@ -27,7 +37,11 @@ function App() {
       <ExpenseForm onAddExpense={handleAddExpense} />
       <p>Gastos registrados: {expenses.length}</p>
       <p>Total gastado: ${totalExpenses}</p>
-      <ExpenseList expenses={expenses} />
+      <ExpenseList 
+        expenses={expenses} 
+        onDeleteExpense={handleDeleteExpense} 
+        onDeleteAllExpenses={handleDeleteAllExpenses} 
+      />
     </main>
   );
 }

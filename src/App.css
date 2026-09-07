@@ -279,3 +279,27 @@ body {
     width: fit-content;
   }
 }
+
+.expense-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.expense-list-header h2 {
+  margin: 0;
+}
+
+.delete-all-button {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 0;
+  padding: 10px 18px;
+}
+
+.delete-all-button:hover {
+  color: #05070d;
+  background: #ffe81f;
+  box-shadow: 0 0 14px rgba(255, 232, 31, 0.6);
+}
